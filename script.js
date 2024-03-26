@@ -24,8 +24,10 @@ input.addEventListener("input", inputHandler);
 
 function inputHandler(evt) {
   let value = evt.target.value;
-  const findTitle = data.filter((el) =>
-    el.title.trim().toLowerCase().includes(value.trim().toLowerCase())
+  const findTitle = data.filter(
+    (el) =>
+      el.keywords.trim().toLowerCase().includes(value.trim().toLowerCase()) ||
+      el.title.trim().toLowerCase().includes(value.trim().toLowerCase())
   );
   addCard(findTitle);
 }
